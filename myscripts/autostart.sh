@@ -3,7 +3,7 @@
 # close laptop screen if there is a HDMI
 (xrandr | grep -q "HDMI-0 connected") && (xrandr --output eDP-1-1 --off)
 
-picom --config ~/.config/picom/picom.config --experimental-backends -b
+picom --config ~/.config/picom/picom.config
 # picom -o 0.95 -i 0.88 --detect-rounded-corners --vsync --blur-background-fixed -f -D 5 -c -b 
 #feh --bg-fill ~/Pictures/background/632918.jpg
 /bin/bash ./wallpaper.sh &
