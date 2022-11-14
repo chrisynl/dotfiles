@@ -19,5 +19,5 @@ picom --config ~/.config/picom/picom.config &
 /bin/bash ~/myscripts/dwm-status.sh &
 /usr/bin/xfce4-power-manager &
 
-setxkbmap -option "caps:swapescape"
+setxkbmap -option "caps:swapescape" &
 ./inverse-scroll.sh &
