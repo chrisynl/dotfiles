@@ -22,6 +22,7 @@ return require("packer").startup(function(use)
 
 	-- colorscheme
 	use("bluz71/vim-nightfly-guicolors")
+	use("ellisonleao/gruvbox.nvim")
 
 	-- tmux & split window navigation
 	use("christoomey/vim-tmux-navigator")
@@ -88,12 +89,11 @@ return require("packer").startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
-
-  -- bar 
-  use {
-    'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
+	-- bar
+	use({
+		"romgrk/barbar.nvim",
+		requires = { "kyazdani42/nvim-web-devicons" },
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

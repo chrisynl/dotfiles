@@ -1,7 +1,22 @@
-vim.cmd("colorscheme nightfly")
+local gruvbox = require("gruvbox")
+-- setup must be called before loading the colorscheme
+-- Default options:
+gruvbox.setup({
+	undercurl = true,
+	underline = true,
+	bold = false,
+	italic = true, -- make italic comments and special strings
+	strikethrough = true,
+	invert_selection = false,
+	invert_signs = false,
+	invert_tabline = false,
+	invert_intend_guides = false,
+	inverse = true, -- invert background for search, diffs, statuslines and errors
+	contrast = "hard", -- can be "hard", "soft" or empty string
+	palette_overrides = {},
+	overrides = {},
+	dim_inactive = false,
+	transparent_mode = false,
+})
 
-local status, _ = pcall(vim.cmd, "colorscheme nightfly")
-if not status then
-	print("Colorscheme not found!")
-	return
-end
+vim.cmd("colorscheme gruvbox")

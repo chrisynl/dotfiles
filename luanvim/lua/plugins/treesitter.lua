@@ -8,7 +8,7 @@ end
 treesitter.setup({
 	-- enable syntax highlighting
 	highlight = {
-		enable = false,
+		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
 	-- enable indentation
@@ -23,6 +23,7 @@ treesitter.setup({
 		"lua",
 		"vim",
 		"c",
+		"python",
 	},
 	-- auto install above language parsers
 	auto_install = true,

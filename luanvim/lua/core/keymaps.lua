@@ -22,11 +22,6 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
-
 -- plugin keymaps
 
 -- vim-maximizer
@@ -42,24 +37,19 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string u
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
-
 -- barbar
-keymap.set("n","<A-,>","<Cmd>BufferPrevious<CR>")
-keymap.set("n","<A-.>","<Cmd>BufferNext<CR>")
+keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
+keymap.set("n", "<leader>tx", "<Cmd>BufferClose<CR>") -- close current tab
+keymap.set("n", "<leader>tn", "<Cmd>BufferNext<CR>") -- go to next tab
+keymap.set("n", "<leader>tp", "<Cmd>BufferPrevious<CR>") -- go to previous tab
 
-keymap.set("n","<A-<>","<Cmd>BufferMovePrevious<CR>")
-keymap.set("n","<A->>","<Cmd>BufferMoveNext<CR>")
-
-keymap.set("n","<A-1>","<Cmd>BufferGoto 1<CR>")
-keymap.set("n","<A-2>","<Cmd>BufferGoto 2<CR>")
-keymap.set("n","<A-3>","<Cmd>BufferGoto 3<CR>")
-keymap.set("n","<A-4>","<Cmd>BufferGoto 4<CR>")
-keymap.set("n","<A-5>","<Cmd>BufferGoto 5<CR>")
-keymap.set("n","<A-6>","<Cmd>BufferGoto 6<CR>")
-keymap.set("n","<A-7>","<Cmd>BufferGoto 7<CR>")
-keymap.set("n","<A-8>","<Cmd>BufferGoto 8<CR>")
-keymap.set("n","<A-9>","<Cmd>BufferGoto 9<CR>")
-keymap.set("n","<A-0>","<Cmd>BufferLast<CR>")
-
-keymap.set("n","<A-p>","<Cmd>BufferPin<CR>")
-keymap.set("n","<A-c>","<Cmd>BufferClose<CR>")
+keymap.set("n", "<leader>t1", "<Cmd>BufferGoto 1<CR>")
+keymap.set("n", "<leader>t2", "<Cmd>BufferGoto 2<CR>")
+keymap.set("n", "<leader>t3", "<Cmd>BufferGoto 3<CR>")
+keymap.set("n", "<leader>t4", "<Cmd>BufferGoto 4<CR>")
+keymap.set("n", "<leader>t5", "<Cmd>BufferGoto 5<CR>")
+keymap.set("n", "<leader>t6", "<Cmd>BufferGoto 6<CR>")
+keymap.set("n", "<leader>t7", "<Cmd>BufferGoto 7<CR>")
+keymap.set("n", "<leader>t8", "<Cmd>BufferGoto 8<CR>")
+keymap.set("n", "<leader>t9", "<Cmd>BufferGoto 9<CR>")
+keymap.set("n", "<leader>t0", "<Cmd>BufferLast<CR>")
