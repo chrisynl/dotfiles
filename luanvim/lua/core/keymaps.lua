@@ -4,8 +4,8 @@ local keymap = vim.keymap
 
 -- general keymaps
 keymap.set("n", "x", '"_x')
-keymap.set("n", "s", "<nop>")
-keymap.set("n", "S", ":w<CR>")
+-- keymap.set("n", "s", "<nop>")
+-- keymap.set("n", "S", ":w<CR>")
 keymap.set("n", "Q", ":q<CR>")
 keymap.set({ "n", "v" }, "H", "5h")
 keymap.set({ "n", "v" }, "J", "5j")
