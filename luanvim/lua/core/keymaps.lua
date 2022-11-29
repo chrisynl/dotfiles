@@ -3,10 +3,10 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- general keymaps
-keymap.set("n", "x", '"_x')
+keymap.set({ "n", "v" }, "x", '"_x')
 -- keymap.set("n", "s", "<nop>")
--- keymap.set("n", "S", ":w<CR>")
-keymap.set("n", "Q", ":q<CR>")
+keymap.set("n", "<A-w>", ":w<CR>")
+keymap.set("n", "<A-q>", ":q<CR>")
 keymap.set({ "n", "v" }, "H", "5h")
 keymap.set({ "n", "v" }, "J", "5j")
 keymap.set({ "n", "v" }, "K", "5k")
@@ -38,18 +38,18 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
 -- barbar
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", "<Cmd>BufferClose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", "<Cmd>BufferNext<CR>") -- go to next tab
-keymap.set("n", "<leader>tp", "<Cmd>BufferPrevious<CR>") -- go to previous tab
+keymap.set("n", "<A-o>", ":tabnew<CR>") -- open new tab
+keymap.set("n", "<A-x>", "<Cmd>BufferClose<CR>") -- close current tab
+keymap.set("n", "<A-j>", "<Cmd>BufferNext<CR>") -- go to next tab
+keymap.set("n", "<A-k>", "<Cmd>BufferPrevious<CR>") -- go to previous tab
 
-keymap.set("n", "<leader>t1", "<Cmd>BufferGoto 1<CR>")
-keymap.set("n", "<leader>t2", "<Cmd>BufferGoto 2<CR>")
-keymap.set("n", "<leader>t3", "<Cmd>BufferGoto 3<CR>")
-keymap.set("n", "<leader>t4", "<Cmd>BufferGoto 4<CR>")
-keymap.set("n", "<leader>t5", "<Cmd>BufferGoto 5<CR>")
-keymap.set("n", "<leader>t6", "<Cmd>BufferGoto 6<CR>")
-keymap.set("n", "<leader>t7", "<Cmd>BufferGoto 7<CR>")
-keymap.set("n", "<leader>t8", "<Cmd>BufferGoto 8<CR>")
-keymap.set("n", "<leader>t9", "<Cmd>BufferGoto 9<CR>")
-keymap.set("n", "<leader>t0", "<Cmd>BufferLast<CR>")
+keymap.set("n", "<A-1>", "<Cmd>BufferGoto 1<CR>")
+keymap.set("n", "<A-2>", "<Cmd>BufferGoto 2<CR>")
+keymap.set("n", "<A-3>", "<Cmd>BufferGoto 3<CR>")
+keymap.set("n", "<A-4>", "<Cmd>BufferGoto 4<CR>")
+keymap.set("n", "<A-5>", "<Cmd>BufferGoto 5<CR>")
+keymap.set("n", "<A-6>", "<Cmd>BufferGoto 6<CR>")
+keymap.set("n", "<A-7>", "<Cmd>BufferGoto 7<CR>")
+keymap.set("n", "<A-8>", "<Cmd>BufferGoto 8<CR>")
+keymap.set("n", "<A-9>", "<Cmd>BufferGoto 9<CR>")
+keymap.set("n", "<A-0>", "<Cmd>BufferLast<CR>")
