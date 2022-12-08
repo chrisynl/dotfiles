@@ -65,8 +65,10 @@ lspconfig["sumneko_lua"].setup({
 })
 
 -- config c/cpp server
+local cfiles_capabilities = vim.lsp.protocol.make_client_capabilities()
+cfiles_capabilities.offsetEncoding = { "utf-16" }
 lspconfig["clangd"].setup({
-	capabilities = capabilities,
+	capabilities = cfiles_capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings
 	},
