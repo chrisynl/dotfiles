@@ -14,10 +14,12 @@ picom --config ~/.config/picom/picom.config &
 #pacmd set-card-profile alsa_card.pci-0000_01_00.1 output:hdmi-stereo &
 
 #/usr/local/bin/electron-ssr &
-/usr/local/bin/clash &
+# /usr/local/bin/clash &
 /usr/bin/nm-applet &
 /bin/bash ~/myscripts/dwm-status.sh &
 /usr/bin/xfce4-power-manager &
 
-setxkbmap -option "caps:swapescape" &
+setxkbmap -option "caps:swapescape"
 ./inverse-scroll.sh &
+
+cfw &
