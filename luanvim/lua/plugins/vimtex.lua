@@ -7,3 +7,6 @@ vim.g.vimtex_view_method = "zathura"
 -- want another compiler backend, you can change it as follows. The list of
 -- supported backends and further explanation is provided in the documentation,
 -- see ":help vimtex-compiler".
+
+-- close the quickfix window after x motion, useful for continuous modes
+vim.g.vimtex_quickfix_autoclose_after_keystrokes = 1

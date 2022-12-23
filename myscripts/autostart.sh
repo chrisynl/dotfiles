@@ -21,5 +21,4 @@ picom --config ~/.config/picom/picom.config &
 
 setxkbmap -option "caps:swapescape"
 ./inverse-scroll.sh &
-
-cfw &
+/usr/local/bin/cfw &

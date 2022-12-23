@@ -10,7 +10,7 @@
 dwm_alsa () {
     VOL=$(pactl list sinks | grep "^[[:space:]]Volume:" | head -n1 | awk '{print $5}' |  awk '{print substr($0,1,2)}')
 	NULL=""
-	MUTE=$(pactl list sinks | grep Mute:.no)
+	MUTE=$(pactl list sinks | grep "Mute:.no")
     printf "%s" "$SEP1"
     if [ "$IDENTIFIER" = "unicode" ]; then
 		if ["$MUTE" = "$NULL"]; then

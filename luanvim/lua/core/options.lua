@@ -37,3 +37,6 @@ opt.splitbelow = true
 
 -- word set
 opt.iskeyword:append("-")
+
+-- scrolloff
+opt.scrolloff = 5
