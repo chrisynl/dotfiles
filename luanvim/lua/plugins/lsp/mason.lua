@@ -23,10 +23,11 @@ mason.setup()
 mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
-		"sumneko_lua",
+		"lua_ls",
 		"clangd",
 		"sourcery",
 		"pyright",
+		"ocamllsp",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
@@ -38,6 +39,7 @@ mason_null_ls.setup({
 		"stylua", -- lua formatter
 		-- "clang_format", -- no need
 		"pylint",
+		"ocamlformat",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

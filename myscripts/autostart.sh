@@ -21,4 +21,7 @@ picom --config ~/.config/picom/picom.config &
 
 setxkbmap -option "caps:swapescape"
 ./inverse-scroll.sh &
+
+# sleep 5s to let wifi has time to connect
+sleep 5
 /usr/local/bin/cfw &

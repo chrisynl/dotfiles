@@ -30,10 +30,32 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 	keymap.set("n", "<leader>K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 	keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
+
+	-- code lens
+	if client.server_capabilities.code_lens then
+		local codelens = vim.api.nvim_create_augroup("LSPCodeLens", { clear = true })
+		vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CursorHold" }, {
+			group = codelens,
+			callback = function()
+				vim.lsp.codelens.refresh()
+			end,
+			buffer = bufnr,
+		})
+	end
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
-local capabilities = cmp_nvim_lsp.default_capabilities()
+-- local capabilities = cmp_nvim_lsp.default_capabilities()
+local c = vim.lsp.protocol.make_client_capabilities()
+c.textDocument.completion.completionItem.snippetSupport = true
+c.textDocument.completion.completionItem.resolveSupport = {
+	properties = {
+		"documentation",
+		"detail",
+		"additionalTextEdits",
+	},
+}
+local capabilities = cmp_nvim_lsp.default_capabilities(c)
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
@@ -44,7 +66,7 @@ for type, icon in pairs(signs) do
 end
 
 -- configure lua server (with special settings)
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
@@ -76,6 +98,23 @@ lspconfig["clangd"].setup({
 
 -- config python server
 lspconfig["pyright"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = { -- custom settings
+	},
+})
+
+-- config ocaml server
+lspconfig["ocamllsp"].setup({
+	filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+	root_dir = lspconfig.util.root_pattern(
+		"*.opam",
+		"esy.json",
+		"package.json",
+		".git",
+		"dune-project",
+		"dune-workspace"
+	),
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings
