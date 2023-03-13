@@ -31,6 +31,14 @@ cmp.setup({
 			luasnip.lsp_expand(args.body)
 		end,
 	},
+	window = {
+		completion = {
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+		},
+		documentation = {
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+		},
+	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-j>"] = cmp.mapping(function(fallback)
 			if luasnip.expand_or_jumpable() then
@@ -60,6 +68,15 @@ cmp.setup({
 		{ name = "luasnip" }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
+		option = {
+			get_bufnrs = function()
+				local bufs = {}
+				for _, win in ipairs(vim.api.nvim_list_wins()) do
+					bufs[vim.api.nvim_win_get_buf(win)] = true
+				end
+				return vim.tbl_keys(bufs)
+			end,
+		},
 	}),
 	-- configure lspkind for vs-code like icons
 	formatting = {
