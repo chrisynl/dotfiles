@@ -109,6 +109,9 @@ lspconfig["ocamllsp"].setup({
 	),
 	capabilities = capabilities,
 	on_attach = on_attach,
+	cmd_env = {
+		OCAMLLSP_SEMANTIC_HIGHLIGHTING = "full",
+	},
 	settings = { -- custom settings
 	},
 })

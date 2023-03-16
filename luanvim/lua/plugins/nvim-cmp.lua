@@ -32,9 +32,10 @@ cmp.setup({
 		end,
 	},
 	window = {
-		completion = {
-			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-		},
+		-- completion = {
+		-- 	winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:PmenuSel",
+		-- },
+		-- completion = cmp.config.window.bordered(),
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},

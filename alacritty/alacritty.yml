@@ -135,7 +135,7 @@ font:
     # value specified for the normal font.
     family: SauceCodePro Nerd Font
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    style: Italic
 
   # Bold italic font face
   bold_italic:
@@ -183,12 +183,43 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
+# Add the following to your alacritty.yml file
+schemes:
+  # ...
+  deus: &deus
+    # Default colors
+    primary:
+      background: '#2c323b'
+      foreground: '#eaeaea'
+    # Normal colors
+    normal:
+      black:   '#242a32'
+      red:     '#d54e53'
+      green:   '#98c379'
+      yellow:  '#e5c07b'
+      blue:    '#83a598'
+      magenta: '#c678dd'
+      cyan:    '#70c0ba'
+      white:   '#eaeaea'
+    # Bright colors
+    bright:
+      black:   '#666666'
+      red:     '#ec3e45'
+      green:   '#90c966'
+      yellow:  '#edbf69'
+      blue:    '#73ba9f'
+      magenta: '#c858e9'
+      cyan:    '#2bcec2'
+      white:   '#ffffff'
+# ...
+colors: *deus
+
 # Colors (Tomorrow Night Bright)
-colors:
+# colors:
   # Default colors
-  primary:
-    background: '0x282a36'
-    foreground: '0xf8f8f2'
+  # primary:
+  #   background: '0x282a36'
+  #   foreground: '0xf8f8f2'
 
     # Bright and dim foreground colors
     #
@@ -216,26 +247,26 @@ colors:
   #  background: '0x404040'
 
   # Normal colors
-  normal:
-    black:   '0x000000'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0xbd93f9'
-    magenta: '0xff79c6'
-    cyan:    '0x8be9fd'
-    white:   '0xbbbbbb'
-
-  # Bright colors
-  bright:
-    black:   '0x44475a'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0xbd93f9'
-    magenta: '0xff79c6'
-    cyan:    '0x8be9fd'
-    white:   '0xffffff'
+  # normal:
+  #   black:   '0x000000'
+  #   red:     '0xff5555'
+  #   green:   '0x50fa7b'
+  #   yellow:  '0xf1fa8c'
+  #   blue:    '0xbd93f9'
+  #   magenta: '0xff79c6'
+  #   cyan:    '0x8be9fd'
+  #   white:   '0xbbbbbb'
+  #
+  # # Bright colors
+  # bright:
+  #   black:   '0x44475a'
+  #   red:     '0xff5555'
+  #   green:   '0x50fa7b'
+  #   yellow:  '0xf1fa8c'
+  #   blue:    '0xbd93f9'
+  #   magenta: '0xff79c6'
+  #   cyan:    '0x8be9fd'
+  #   white:   '0xffffff'
 
   # Dim colors
   #

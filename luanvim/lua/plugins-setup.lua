@@ -23,6 +23,7 @@ return require("packer").startup(function(use)
 	-- colorscheme
 	use("bluz71/vim-nightfly-guicolors")
 	use("ellisonleao/gruvbox.nvim")
+	use("ajmwagar/vim-deus")
 
 	-- tmux & split window navigation
 	use("christoomey/vim-tmux-navigator")
