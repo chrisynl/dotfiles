@@ -113,4 +113,7 @@ require("lazy").setup({
 			vim.o.timeoutlen = 400
 		end,
 	},
+
+	-- highlight color
+	"norcalli/nvim-colorizer.lua",
 })

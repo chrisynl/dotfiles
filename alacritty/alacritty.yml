@@ -199,19 +199,19 @@ schemes:
       yellow:  '#e5c07b'
       blue:    '0xbd93f9'
       magenta: '#c678dd'
-      cyan:    '0x8be9fd'
+      cyan:    '#8be9fd'
       white:   '#eaeaea'
     # Bright colors
     bright:
       black:   '#666666'
       red:     '#ec3e45'
-      green:   '0x50fa7b'
+      green:   '#50fa7b'
       yellow:  '#edbf69'
       blue:    '#73ba9f'
       magenta: '#c858e9'
       cyan:    '#2bcec2'
       white:   '#ffffff'
-      black:   '0x000000'
+      black:   '#000000'
 # ...
 colors: *deus
 
