@@ -116,4 +116,7 @@ require("lazy").setup({
 
 	-- highlight color
 	"norcalli/nvim-colorizer.lua",
+
+	-- zen mode
+	"folke/zen-mode.nvim",
 })
