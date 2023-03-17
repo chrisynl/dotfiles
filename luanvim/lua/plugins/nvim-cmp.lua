@@ -32,10 +32,7 @@ cmp.setup({
 		end,
 	},
 	window = {
-		-- completion = {
-		-- 	winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:PmenuSel",
-		-- },
-		-- completion = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered(),
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
@@ -86,4 +83,27 @@ cmp.setup({
 			ellipsis_char = "...",
 		}),
 	},
+})
+
+-- `/` cmdline setup.
+cmp.setup.cmdline("/", {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = "buffer" },
+	},
+})
+
+-- `:` cmdline setup.
+cmp.setup.cmdline(":", {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{
+			name = "cmdline",
+			option = {
+				ignore_cmds = { "Man", "!" },
+			},
+		},
+	}),
 })
