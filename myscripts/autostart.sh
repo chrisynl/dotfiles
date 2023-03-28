@@ -23,5 +23,5 @@ setxkbmap -option "caps:swapescape"
 ./inverse-scroll.sh &
 
 # sleep 5s to let wifi has time to connect
-sleep 5
+sleep 10
 /usr/local/bin/cfw &

@@ -24,8 +24,8 @@ end
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require("luasnip/loaders/from_vscode").lazy_load()
 
-vim.api.nvim_set_hl(0, "MyPmenu", { bg = "#32302f", fg = "#f2e5bc" })
-vim.api.nvim_set_hl(0, "MyPmenuSel", { bg = "#f2e5bc", fg = "#32302f", bold = true, italic = true })
+vim.api.nvim_set_hl(0, "MyPmenu", { bg = "#32302f", fg = "#b2b5bc" })
+vim.api.nvim_set_hl(0, "MyPmenuSel", { bg = "#b2b5bc", fg = "#32302f", bold = true, italic = true })
 
 vim.opt.completeopt = "menu,menuone,noselect"
 cmp.setup({

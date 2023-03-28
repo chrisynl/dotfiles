@@ -104,6 +104,7 @@ lspconfig["ocamllsp"].setup({
 		"esy.json",
 		"package.json",
 		".git",
+		"dune",
 		"dune-project",
 		"dune-workspace"
 	),

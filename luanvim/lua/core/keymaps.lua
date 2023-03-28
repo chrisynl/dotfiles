@@ -53,3 +53,6 @@ keymap.set("n", "<A-7>", "<Cmd>BufferGoto 7<CR>")
 keymap.set("n", "<A-8>", "<Cmd>BufferGoto 8<CR>")
 keymap.set("n", "<A-9>", "<Cmd>BufferGoto 9<CR>")
 keymap.set("n", "<A-0>", "<Cmd>BufferLast<CR>")
+
+-- zen mode
+keymap.set("n", "<leader>z", "<Cmd>ZenMode<CR>")
