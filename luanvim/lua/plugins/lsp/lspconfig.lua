@@ -96,6 +96,29 @@ lspconfig["pyright"].setup({
 	},
 })
 
+-- config rust_analyzer
+require("lspconfig").rust_analyzer.setup({
+	on_attach = on_attach,
+	settings = {
+		["rust-analyzer"] = {
+			imports = {
+				granularity = {
+					group = "module",
+				},
+				prefix = "self",
+			},
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
+})
+
 -- config ocaml server
 lspconfig["ocamllsp"].setup({
 	filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
