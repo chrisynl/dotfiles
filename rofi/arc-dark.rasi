@@ -5,6 +5,7 @@
  ***********************************************/
 
 * {
+    font:				"SauceCodePro Nerd Font 30";
     selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
     foreground:                  rgba ( 196, 203, 212, 100 % );
     normal-foreground:           @foreground;
@@ -143,4 +144,9 @@
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
     text-color: @normal-foreground;
+}
+
+element-text {
+ background-color: inherit;
+ text-color: inherit;
 }

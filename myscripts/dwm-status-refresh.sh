@@ -6,9 +6,9 @@
 # Within that line, the first and ninth numbers after ':' are respectively the received and transmited bytes.
 function get_bytes {
 	# Find active network interface
-	# interface=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $5}')
+	interface=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $5}')
   # TODO: need to check if it is a tun device
-  interface='utun'
+  # interface='utun'
 	line=$(grep $interface /proc/net/dev | cut -d ':' -f 2 | awk '{print "received_bytes="$1, "transmitted_bytes="$9}')
 	eval $line
 	now=$(date +%s%N)

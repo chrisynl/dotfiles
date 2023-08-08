@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# refresh rate
+(xrandr --output HDMI-0 --mode 2560x1440 --rate 144) && (xrandr | grep -q "HDMI-0 connected") && (xrandr --output eDP-1-1 --off)
 # close laptop screen if there is a HDMI
-(xrandr | grep -q "HDMI-0 connected") && (xrandr --output eDP-1-1 --off)
+
+sleep 3
 
 picom --config ~/.config/picom/picom.config &
 # picom -o 0.95 -i 0.88 --detect-rounded-corners --vsync --blur-background-fixed -f -D 5 -c -b 
@@ -16,12 +19,12 @@ picom --config ~/.config/picom/picom.config &
 #/usr/local/bin/electron-ssr &
 # /usr/local/bin/clash &
 /usr/bin/nm-applet &
-/bin/bash ~/myscripts/dwm-status.sh &
+/bin/bash ./dwm-status.sh &
 /usr/bin/xfce4-power-manager &
 
 setxkbmap -option "caps:swapescape"
 ./inverse-scroll.sh &
 
 # sleep 5s to let wifi has time to connect
-sleep 10
+sleep 5
 /usr/local/bin/cfw &

@@ -120,25 +120,25 @@ require("lspconfig").rust_analyzer.setup({
 })
 
 -- config ocaml server
-lspconfig["ocamllsp"].setup({
-	filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
-	root_dir = lspconfig.util.root_pattern(
-		"*.opam",
-		"esy.json",
-		"package.json",
-		".git",
-		"dune",
-		"dune-project",
-		"dune-workspace"
-	),
-	capabilities = capabilities,
-	on_attach = on_attach,
-	cmd_env = {
-		OCAMLLSP_SEMANTIC_HIGHLIGHTING = "full",
-	},
-	settings = { -- custom settings
-	},
-})
+-- lspconfig["ocamllsp"].setup({
+-- 	filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+-- 	root_dir = lspconfig.util.root_pattern(
+-- 		"*.opam",
+-- 		"esy.json",
+-- 		"package.json",
+-- 		".git",
+-- 		"dune",
+-- 		"dune-project",
+-- 		"dune-workspace"
+-- 	),
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	cmd_env = {
+-- 		OCAMLLSP_SEMANTIC_HIGHLIGHTING = "full",
+-- 	},
+-- 	settings = { -- custom settings
+-- 	},
+-- })
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
