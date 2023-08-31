@@ -1,31 +1,39 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local lspconfig = require('lspconfig')
-      require('mason-lspconfig').setup_handlers({
-        function(server_name)
-          lspconfig[server_name].setup({
-            capabilities = lsp_capabilities,
-          })
-        end,
-      })
-      require("mason-lspconfig").setup {
-          ensure_installed = {
-            "lua_ls",
-            "clangd",
-            -- "sourcery",
-            -- "pyright",
-            -- "ocamllsp",
-          },
-      }
-    end
-  },
+	"williamboman/mason.nvim",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"jayp0521/mason-null-ls.nvim",
+	},
+	config = function()
+		-- import mason plugin safely
+		local mason = require("mason")
+
+		-- import mason-lspconfig plugin safely
+		local mason_lspconfig = require("mason-lspconfig")
+
+		-- import mason-null-ls plugin safely
+		local mason_null_ls = require("mason-null-ls")
+
+		-- enable mason
+		mason.setup()
+
+		mason_lspconfig.setup({
+			-- list of servers for mason to install
+			ensure_installed = {
+				"lua_ls",
+				"clangd",
+			},
+			-- auto-install configured servers (with lspconfig)
+			automatic_installation = true, -- not the same as ensure_installed
+		})
+
+		mason_null_ls.setup({
+			-- list of formatters & linters for mason to install
+			ensure_installed = {
+				"stylua", -- lua formatter
+			},
+			-- auto-install configured servers (with lspconfig)
+			automatic_installation = true,
+		})
+	end,
 }
