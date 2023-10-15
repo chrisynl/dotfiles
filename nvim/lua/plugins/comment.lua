@@ -1,6 +1,5 @@
 return {
-  "numToStr/Comment.nvim",
-  event = { "BufReadPre", "BufNewFile" },
-  config = function()
-  end,
+	"numToStr/Comment.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	config = true,
 }

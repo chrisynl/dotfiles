@@ -20,6 +20,7 @@ return {
 		local typescript = require("typescript")
 
 		local keymap = vim.keymap -- for conciseness
+		local util = lspconfig.util
 
 		-- enable keybinds only for when lsp server available
 		local on_attach = function(client, bufnr)
@@ -98,9 +99,31 @@ return {
 				},
 			},
 		})
-		lspconfig["clangd"].setup({
+		lspconfig["ccls"].setup({
+			init_options = {
+				-- compilationDatabaseDirectory = "Debug",
+				index = {
+					threads = 4,
+				},
+				clang = {
+					excludeArgs = { "-frounding-math" },
+				},
+				-- root_dir = util.root_pattern("compile_commands.json", ".ccls", ".git", ".ccls_root"),
+			},
+			on_attach = on_attach,
+		})
+		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetype = { "rust" },
+			-- root_dir = util.root_pattern("Cargo.toml"),
+			settings = { -- custom settings for rust
+				["rust_analyzer"] = {
+					cargo = {
+						allFeatures = true,
+					},
+				},
+			},
 		})
 	end,
 }
