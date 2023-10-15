@@ -98,8 +98,16 @@ return {
 				},
 			},
 		})
-		lspconfig["clangd"].setup({
-			capabilities = capabilities,
+		lspconfig["ccls"].setup({
+			init_options = {
+				-- compilationDatabaseDirectory = "Debug",
+				index = {
+					threads = 4,
+				},
+				clang = {
+					excludeArgs = { "-frounding-math" },
+				},
+			},
 			on_attach = on_attach,
 		})
 	end,

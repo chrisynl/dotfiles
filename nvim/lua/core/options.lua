@@ -40,3 +40,6 @@ opt.iskeyword:append("-")
 
 -- scrolloff
 opt.scrolloff = 5
+
+-- modeline
+opt.modeline = false
