@@ -4,22 +4,31 @@ return {
 		event = { "UIEnter" },
 		init = function()
 			require("hlchunk").setup({
-				chunk = {
+				blank = {
 					enable = true,
+					chars = {
+						" ",
+					},
+					style = {
+						{ bg = "#434437" },
+						{ bg = "#2f4440" },
+						{ bg = "#433054" },
+						{ bg = "#284251" },
+					},
+				},
+				chunk = {
+					enable = false,
 					use_treesitter = true,
 					style = {
 						{ fg = "#806d9c" },
 					},
 				},
 				indent = {
-					enable = false,
+					enable = true,
 					chars = { "│", "¦", "┆", "┊" }, -- more code can be found in https://unicodeplus.com/
 					style = {
 						"#333333",
 					},
-				},
-				blank = {
-					enable = true,
 				},
 				line_num = {
 					use_treesitter = true,
@@ -29,9 +38,11 @@ return {
 	},
 	-- {
 	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	opts = {
-	-- 		show_current_context = true,
-	-- 		show_current_context_start = false,
-	-- 	}
+	-- 	main = "ibl",
+	-- 	event = { "UIEnter" },
+	-- 	ops = {},
+	-- 	init = function()
+	-- 		require("ibl").setup()
+	-- 	end,
 	-- },
 }
