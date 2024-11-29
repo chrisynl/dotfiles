@@ -16,11 +16,7 @@ return {
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-		-- import typescript plugin
-		local typescript = require("typescript")
-
 		local keymap = vim.keymap -- for conciseness
-		local util = lspconfig.util
 
 		-- enable keybinds only for when lsp server available
 		local on_attach = function(client, bufnr)
