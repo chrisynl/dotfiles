@@ -13,6 +13,8 @@ return {
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
+		local util = require("lspconfig/util")
+
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -107,19 +109,6 @@ return {
 				-- root_dir = util.root_pattern("compile_commands.json", ".ccls", ".git", ".ccls_root"),
 			},
 			on_attach = on_attach,
-		})
-		lspconfig["rust_analyzer"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetype = { "rust" },
-			-- root_dir = util.root_pattern("Cargo.toml"),
-			settings = { -- custom settings for rust
-				["rust_analyzer"] = {
-					cargo = {
-						allFeatures = true,
-					},
-				},
-			},
 		})
 	end,
 }
