@@ -8,6 +8,7 @@ return {
 			"smjonas/inc-rename.nvim",
 			config = true,
 		},
+		"williamboman/mason.nvim",
 	},
 	config = function()
 		-- import lspconfig plugin
