@@ -19,10 +19,10 @@ picom --config ~/.config/picom/picom.config &
 #/usr/local/bin/electron-ssr &
 # /usr/local/bin/clash &
 /usr/bin/nm-applet &
-/bin/bash ./dwm-status.sh &
+# /bin/bash ./dwm-status.sh &
 /usr/bin/xfce4-power-manager &
 
-setxkbmap -option "caps:swapescape"
+setxkbmap -option "caps:swapescape" &
 ./inverse-scroll.sh &
 
 # sleep 5s to let wifi has time to connect
