@@ -6,10 +6,12 @@
 
 sleep 3
 
+feh --randomize --bg-fill ~/Pictures/bg &
+#feh --bg-fill ~/Pictures/background/632918.jpg
+# /bin/bash ./wallpaper.sh &
+
 picom --config ~/.config/picom/picom.config &
 # picom -o 0.95 -i 0.88 --detect-rounded-corners --vsync --blur-background-fixed -f -D 5 -c -b 
-#feh --bg-fill ~/Pictures/background/632918.jpg
-/bin/bash ./wallpaper.sh &
 
 # HDMI sound
 #/usr/bin/start-pulseaudio-x11

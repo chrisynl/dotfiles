@@ -5,8 +5,8 @@ opt.number = true
 opt.relativenumber = true
 
 -- tabs & indentations
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
@@ -43,3 +43,6 @@ opt.scrolloff = 5
 
 -- modeline
 opt.modeline = false
+
+-- updatetime
+vim.o.updatetime = 300
