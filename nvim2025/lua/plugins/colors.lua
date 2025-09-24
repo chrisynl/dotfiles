@@ -3,21 +3,31 @@ local function enable_transparency()
 end
 
 return {
+  { 
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme "catppuccin-macchiato"
+      -- enable_transparency()
+    end
+  },
   {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
-    config = function()
-      vim.cmd.colorscheme "tokyonight-night"
-      -- enable_transparency()
-    end
+    -- config = function()
+    --   vim.cmd.colorscheme "tokyonight-night"
+    --   -- enable_transparency()
+    -- end
   },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
-      theme = 'tokyonight-night',
+      -- theme = 'tokyonight-night',
+      theme = 'catppuccin-macchiato',
       sections = {
         lualine_c = {
           { 'filename',
