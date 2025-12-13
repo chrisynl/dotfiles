@@ -56,4 +56,4 @@ vim.api.nvim_create_autocmd("LspAttach", { callback = function (args)
   end
 })
 
-vim.lsp.enable({ "ty", "clangd", "hlasm" })  
+vim.lsp.enable({ "ty", "clangd", "hlasm", "rust-analyzer" })  
