@@ -1,9 +1,28 @@
 return {
   'nvim-telescope/telescope.nvim', tag = '0.1.8',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  dependencies = { 
+      'nvim-lua/plenary.nvim',
+    {
+      'prochri/telescope-all-recent.nvim',
+      dependencies = {
+        "nvim-telescope/telescope.nvim",
+        "kkharji/sqlite.lua",
+        -- optional, if using telescope for vim.ui.select
+        "stevearc/dressing.nvim"
+      },
+      opts =
+        {
+          -- your config goes here
+        }
+    }
+  },
   config = function()
     local tlsp = require('telescope')
     local builtin = require('telescope.builtin')
+    -- This may bind to old telescope function depending on your load order:
+    -- vim.keymap.set('n', '<leader>f', require'telescope'.builtins.find_files)
+    -- So: better wrap it in a function:
+    -- vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_files() end)
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
     vim.keymap.set('n', '<leader>fc', function()

@@ -20,7 +20,7 @@ return {
         vim.keymap.set('n', 'K', '5k', { buffer = bufnr, noremap = true, silent = true, nowait = true, desc = 'Tree: up 5' })
       end,
       -- 1. 自动更改根目录为当前文件所在目录
-      sync_root_with_cwd = true,
+      sync_root_with_cwd = false,
 
       -- 2. 打开文件时自动定位并高亮当前文件
       update_focused_file = {
