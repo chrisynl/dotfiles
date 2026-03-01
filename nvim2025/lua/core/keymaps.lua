@@ -10,10 +10,10 @@ keymap.set("n", "r", "<nop>")
 keymap.set("n", "R", "<nop>")
 keymap.set("n", "<A-w>", ":w<CR>")
 keymap.set("n", "<A-q>", ":q<CR>")
-keymap.set({ "n", "v" }, "H", "5h")
+-- keymap.set({ "n", "v" }, "H", "5h")
 keymap.set({ "n", "v" }, "J", "5j")
 keymap.set({ "n", "v" }, "K", "5k")
-keymap.set({ "n", "v" }, "L", "5l")
+-- keymap.set({ "n", "v" }, "L", "5l")
 
 -- Basic window ops
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Focus left window' })
